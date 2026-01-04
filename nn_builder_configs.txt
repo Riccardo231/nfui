@@ -1,0 +1,102 @@
+{
+  "culo": {
+    "epochs": 10,
+    "learning_rate": 0.001,
+    "batch_size": 10,
+    "optimizer": "adam",
+    "dataset": {
+      "preset": "None",
+      "path": ""
+    },
+    "layers": [
+      {
+        "type": "Dense",
+        "neurons": 32,
+        "activation": "relu"
+      }
+    ]
+  },
+  "prova": {
+    "epochs": 10,
+    "learning_rate": 0.001,
+    "batch_size": 10,
+    "optimizer": "adam",
+    "dataset": {
+      "preset": "None",
+      "path": ""
+    },
+    "layers": [
+      {
+        "type": "Dense",
+        "neurons": 32,
+        "activation": "relu"
+      },
+      {
+        "type": "Conv2D",
+        "filters": 32,
+        "kernel_width": 3,
+        "kernel_height": 3,
+        "activation": "relu"
+      },
+      {
+        "type": "Dropout",
+        "rate": 0.5
+      },
+      {
+        "type": "Reshape",
+        "shape": "1,28,28"
+      }
+    ]
+  },
+  "mnist": {
+    "epochs": 10,
+    "learning_rate": 0.001,
+    "batch_size": 10,
+    "optimizer": "adam",
+    "dataset": {
+      "preset": "None",
+      "path": ""
+    },
+    "layers": [
+      {
+        "type": "Input",
+        "neurons": 784
+      },
+      {
+        "type": "Reshape",
+        "shape": "1,28,28"
+      },
+      {
+        "type": "Conv2D",
+        "filters": 8,
+        "kernel_width": 3,
+        "kernel_height": 3,
+        "activation": "relu"
+      },
+      {
+        "type": "Maxpool2D",
+        "pool_width": 2,
+        "pool_height": 2,
+        "stride": 2
+      },
+      {
+        "type": "Conv2D",
+        "filters": 16,
+        "kernel_width": 3,
+        "kernel_height": 3,
+        "activation": "relu"
+      },
+      {
+        "type": "Maxpool2D",
+        "pool_width": 2,
+        "pool_height": 2,
+        "stride": 2
+      },
+      {
+        "type": "Dense",
+        "neurons": 10,
+        "activation": "softmax"
+      }
+    ]
+  }
+}
